@@ -13,47 +13,56 @@ class _LoadingPageState extends State<LoadingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade200,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Column(
-              children: const [
-                Image(
-                  image: AssetImage('assets/Gif/Loading.gif'),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 50,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(14),
-              child: TextField(
-                controller: fullNameController,
-                decoration: const InputDecoration(
-                  hintText: 'Add Your Intress (Optional)',
-                  // labelText: 'Add Your Intress',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                    borderSide: BorderSide(color: Colors.black),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                    borderSide: BorderSide(color: Colors.black),
+      backgroundColor: Colors.white,
+      body: Padding(
+        padding: const EdgeInsets.all(10),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const SizedBox(
+                height: 150,
+              ),
+              const Image(
+                image: AssetImage('assets/Gif/Loading.gif'),
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  controller: fullNameController,
+                  decoration: InputDecoration(
+                    hintText: 'Add Your Intrest',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
                   ),
                 ),
               ),
-            ),
-            Column(
-              children: [
-                TextButton(
-                  onPressed: () {},
-                  child: Text("Add"),
-                ),
-              ],
-            )
-          ],
+              const SizedBox(
+                height: 30,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TextButton(
+                    style: ButtonStyle(
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(18.0),
+                          side: const BorderSide(color: Colors.black),
+                        ),
+                      ),
+                    ),
+                    onPressed: () {},
+                    child: const Text("Start Chatting"),
+                  )
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
