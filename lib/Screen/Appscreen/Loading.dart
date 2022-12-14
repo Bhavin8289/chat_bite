@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class LoadingPage extends StatefulWidget {
@@ -47,12 +49,15 @@ class _LoadingPageState extends State<LoadingPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  TextButton(
+                  ElevatedButton(
                     style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.red),
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18.0),
-                          side: const BorderSide(color: Colors.black),
+                          side: const BorderSide(
+                            color: Colors.transparent,
+                          ),
                         ),
                       ),
                     ),
