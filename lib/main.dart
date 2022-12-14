@@ -1,4 +1,4 @@
-import 'package:chat_bite/Screen/Homepage.dart';
+import 'package:chat_bite/Screen/Appscreen/Loading.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'ChatBite',
-      home: HomePage(),
+      title: 'ChatBiteRND',
+      home: LoadingPage(),
     );
   }
 }
