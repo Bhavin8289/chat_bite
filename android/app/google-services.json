@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "749052554064",
+    "project_id": "chatbiternd",
+    "storage_bucket": "chatbiternd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:749052554064:android:dbab3c3d4e42b34e335a55",
+        "android_client_info": {
+          "package_name": "com.example.chat_bite"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "749052554064-o5q13gf6e0el5ljf5f81gf5tei2uvvtf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJBa9qupZZgGJeOuBKahT_eXM-XyKsVj8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "749052554064-o5q13gf6e0el5ljf5f81gf5tei2uvvtf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
