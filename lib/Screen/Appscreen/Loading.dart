@@ -1,5 +1,5 @@
 import 'dart:developer';
-
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class LoadingPage extends StatefulWidget {
@@ -10,7 +10,22 @@ class LoadingPage extends StatefulWidget {
 }
 
 class _LoadingPageState extends State<LoadingPage> {
+  final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+
   TextEditingController fullNameController = TextEditingController();
+
+  Future<UserCredential> signInAnon() async {
+    UserCredential userCredential =
+        await FirebaseAuth.instance.signInAnonymously();
+
+    log("Signed In $userCredential");
+    return userCredential;
+  }
+
+  void SignOut() {
+    firebaseAuth.signOut();
+    log('Signout');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +76,9 @@ class _LoadingPageState extends State<LoadingPage> {
                         ),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      signInAnon();
+                    },
                     child: const Text("Start Chatting"),
                   )
                 ],
