@@ -19,6 +19,7 @@ class _LoadingPageState extends State<LoadingPage> {
         await FirebaseAuth.instance.signInAnonymously();
 
     log("Signed In $userCredential");
+
     return userCredential;
   }
 
