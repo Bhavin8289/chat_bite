@@ -1,4 +1,7 @@
 import 'dart:developer';
+import 'package:chat_bite/Screen/Appscreen/NoUserFound.dart';
+import 'package:chat_bite/Screen/Appscreen/SearchUser.dart';
+import 'package:chat_bite/Screen/Chat/ChatScrren.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +14,6 @@ class LoadingPage extends StatefulWidget {
 
 class _LoadingPageState extends State<LoadingPage> {
   final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
-
   TextEditingController fullNameController = TextEditingController();
 
   Future<UserCredential> signInAnon() async {
@@ -23,10 +25,10 @@ class _LoadingPageState extends State<LoadingPage> {
     return userCredential;
   }
 
-  void SignOut() {
-    firebaseAuth.signOut();
-    log('Signout');
-  }
+  // void SignOut() {
+  //   firebaseAuth.signOut();
+  //   log('Signout');
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +80,19 @@ class _LoadingPageState extends State<LoadingPage> {
                       ),
                     ),
                     onPressed: () {
-                      signInAnon();
+                      FirebaseAuth.instance.signInAnonymously().then((result) {
+                        return Navigator.push(context, MaterialPageRoute(
+                          builder: (context) {
+                            return SearchUser();
+                          },
+                        ));
+
+                        // Sign in successful.
+                        // Go to the home screen.
+                      }, onError: (error) {
+                        // Sign in failed.
+                        // Show the error screen.
+                      });
                     },
                     child: const Text("Start Chatting"),
                   )
